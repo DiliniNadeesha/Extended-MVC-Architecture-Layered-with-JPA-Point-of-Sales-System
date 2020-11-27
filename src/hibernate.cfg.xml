@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?><!--Prolog--><!--utf______ unicode thynne-->
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd"><!--xml file eka mona wageda syntax mna wageda net wln syntax wlta thyda blnwa-->
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/hibernatepos</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">1234</property>
+
+    <!-- DB schema will be updated if needed -->
+    <property name="lk.ijse.dep.hibernate.hbm2ddl.auto">update</property>  <!--lk.ijse.dep.hibernate mapping to data definition language--><!--create / create-drop / update -->
+    <property name="lk.ijse.dep.hibernate.dialect">org.lk.ijse.dep.hibernate.dialect.MySQL57Dialect</property>
+    <property name="lk.ijse.dep.hibernate.show_sql">true</property>
+
+    <mapping class="lk.ijse.dep.pos.entity.Customer"></mapping>
+    <mapping class="lk.ijse.dep.pos.entity.Order"></mapping>
+    <mapping class="lk.ijse.dep.pos.entity.OrderDetail"></mapping>
+    <mapping class="lk.ijse.dep.pos.entity.Item"></mapping>
+  </session-factory>
+</hibernate-configuration>
